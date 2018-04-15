@@ -6,7 +6,7 @@ int MenuMain(char * login, int *AllBusketCount, AllBasket * allbasket)
 	FILE * file;
 	errno_t err;
 	Goods * goods;
-	
+	long sum = 0;
 	
 	/*int loginResult = LogIn(login);
 	switch (loginResult)
@@ -127,7 +127,7 @@ int MenuMain(char * login, int *AllBusketCount, AllBasket * allbasket)
 				} break;
 				}
 			}
-			long sum = 0;
+			long sumLocal = 0;
 
 			allbasket = (AllBasket*)realloc(allbasket, (countOfGoodsInBasket + 1) * sizeof(AllBasket));
 			FromOneBusketToAnother(allbasket, basket, &countOfGoodsInBasket, AllBusketCount);
@@ -161,7 +161,7 @@ int MenuMain(char * login, int *AllBusketCount, AllBasket * allbasket)
 					if (ReTurn == 1)
 						return 0;
 					else
-						return 1;
+						return 0;
 				} break;
 				case 3:
 				{
@@ -267,7 +267,7 @@ int MenuMain(char * login, int *AllBusketCount, AllBasket * allbasket)
 				} break;
 				}
 			}
-			long sum = 0;
+			long sumLocal = 0;
 
 			allbasket = (AllBasket*)realloc(allbasket, (countOfGoodsInBasket + 1) * sizeof(AllBasket));
 			FromOneBusketToAnother(allbasket, basket, &countOfGoodsInBasket, AllBusketCount);
@@ -301,7 +301,7 @@ int MenuMain(char * login, int *AllBusketCount, AllBasket * allbasket)
 				if (ReTurn == 1)
 					return 0;
 				else
-					return 1;
+					return 0;
 			} break;
 			case 3:
 			{
@@ -362,13 +362,14 @@ int OrderForm(Basket * basket, int * countOfGoodsInBasket, long * sum)
 int OrderForm(AllBasket * basket, int * countOfGoodsInBasket, long * sum)
 {
 	system("cls");
+
 	for (int i = 0; i < *countOfGoodsInBasket; i++)
 	{
 		printf("Наименование товара:\n %s\n", basket[i].name);
 		printf("Сумма товара = %d\n", basket[i].cost);
-		sum += basket[i].cost;
+		*sum += basket[i].cost;
 	}
-	printf("Общая сумма = %d\n", sum);
+	printf("Общая сумма = %d\n", *sum);
 	printf("Для подтверждения оплаты введите 1, Для отмены - 0\n----> ");
 	int res;
 	scanf_s("%d", &res);
