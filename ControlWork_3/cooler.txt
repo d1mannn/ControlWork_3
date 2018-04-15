@@ -1,0 +1,48 @@
+
+130417	Cooler AeroCool, for Socket 115*/775/AMD, Verkho 3, 120W, 9cm fan, 1200-2800rpm, 18.9-45.5CFM, 4pin	7736	7368
+130419	Cooler AeroCool, for Socket 2011/1366/115*/775/AMD, Verkho 5, 150W, 12cm fan, 800-2000rpm, 56.4CFM	17305	16481
+101786	Cooler CoolerMaster, for Socket 2011, CP8-9HDSA-PL-GP, 4200rpm, 64.1CFM, 4 pin	4279	4075
+96793	Cooler CoolerMaster, for Socket 2011/1366/1156/775/AMD, X6, 600-1900rpm, 59.5CFM, 27dBA	18820	17924
+82690	Cooler DeepCool, for Socket 1155/1156/1150, Theta  9 PWM, 95W, 9cm fan, 1100-3200rpm, 57.97CFM, 4pin	2231	2125
+98571	Cooler DeepCool, for Socket 1155/1156/1150, Theta  9, 82W, 9cm fan, 2000rpm, 36.5CFM, 3pin	1594	1518
+117895	Cooler DeepCool, for Socket 1155/1156/1150, Theta 15, 82W, 9cm fan, 2000rpm, 32.6CFM, 27,8dB, 3pin	1770	1686
+104711	Cooler DeepCool, for Socket 1155/1156/1150, Theta 16 PWM, 95W, Al+Cu, 900-2400rpm, 44.25CFM, 4pin	4059	3866
+82684	Cooler DeepCool, for Socket 1155/1156/1150, Theta 20 PWM, 95W, 9cm fan, 900-2400rpm, 42.76CFM, 4pin	2576	2453
+93345	Cooler DeepCool, for Socket 1155/1156/1150, Theta 20, 95W, 10cm fan, 2200rpm, 38.15CFM, 3pin	1733	1650
+82687	Cooler DeepCool, for Socket 1155/1156/1150, Theta 21, 95W, 9cm fan, 2200rpm, 37.36CFM, 3pin	2086	1987
+106593	Cooler DeepCool, for Socket 1155/1156/1150, Theta 31 PWM, 95W, 9cm fan, 2400rpm, 42.76 CFM, 4pin	3355	3195
+93595	Cooler DeepCool, for Socket 1156/1155/1150/775, Alta 7, 95W,  9cm, 2200rpm, 25dBA, 40.9CFM	2093	1993
+122122	Cooler DeepCool, for Socket 1156/1155/1150/775/AMD, Gammaxx200T, 12cm fan, 900-1600rpm, 4pin	5018	4779
+122123	Cooler DeepCool, for Socket 1156/1155/1150/775/AMD, Ice Edge Mini FS v2.0, 95W, 2200rpm,  3pin	3677	3502
+132438	Cooler DeepCool, for Socket 1366/1150/1155/2011/AMD, IceBlade 200M, 9cm, 2200rpm, 2pipes, 42.95CFM	7182	6840
+97656	Cooler DeepCool, for Socket 1366/1150/1155/2011/AMD, IceBladePro,12cm,1500rpm, 4pipes, 60.29CFM,4pin	15729	14980
+133873	Cooler DeepCool, for Socket 1366/1155/1156/775/AMD, Gammaxx400 White , 12cm fan, 4pipes, 4pin	11794	11232
+95017	Cooler DeepCool, for Socket 1366/1155/775/AMD, Gammaxx300, 12cm fan, 900-1600rpm, 3pipes, 4pin	6962	6630
+119163	Cooler DeepCool, for Socket 2011/1366/1156/1150/775/AMD, Assassin II, 300-1400rpm, 68.06-70.08CFM	28563	27203
+122121	Cooler DeepCool, for Socket 2011/1366/1156/1150/775/AMD, Lucifer K2, 600-1800rpm, 61.93CFM, 4pin	15396	14663
+103749	Cooler DeepCool, for Socket 2011/1366/1156/1150/AMD, Frostwin, 900-1600rpm, 17-21dBA, 4pipes,55.5CFM	15341	14610
+131948	Cooler DeepCool, for Socket 2011/1366/115x/775/AMD, Gammaxx S40, 12cm fan, 900-1600rpm, 4pipes, 4pin	9435	8986
+115035	Cooler DeepCool, for Socket 2011/1366/115x/775/AMD, Neptwin, 900-1300rpm, 26.1dBA, 6pipes, 139.5CFM	19870	19291
+132015	Cooler Gigabyte, for Socket 2011/1366/115*/775/AMD, GP-XTC700, 500-1700rpm, 12-31dBA	35247	33569
+125870	Cooler Noctua, for Socket 2011/1366/1356, NH-U9DXi4 for Intel Xeon	26780	25505
+123754	Cooler Noctua, for Socket AM2+/AM3+/FM1/FM2, NH-L9a, PWM 300-2500rpm, 23dBA	21071	20068
+126654	Cooler Supermicro SNK-P0016. for 1U/775, passive	11578	11027
+127530	Cooler Thermalright HR-22,  for Socket 2011, 900-1300rpm, 73.6CFM, 4 pin	43717	41635
+110764	Cooler Thermalright, for Socket 2011/1366/115x/775/AMD, Silver Arrow IB-E Extreme, 600-2500 rpm	43595	41519
+110763	Cooler Thermalright, for Socket 2011/1366/115x/775/AMD, Silver Arrow IB-E, 600-2500 rpm, 21-45 dBA	42538	40512
+130988	Cooler Thermaltake, for Socket 1156/1155/1150, Silent1156, 110W, 9cm fan, 800-1700rpm, 36.2CFM	11753	11193
+136506	Cooler Thermaltake, for Socket 115x/775/AMD, MeOrb II, 1500-2500 rpm, 18.5dBA	10180	9695
+108132	"Water Cooler Thermaltake Bigwater 760 Pro, for Socket 2011/1366/115x/775/AMD, dual 5.25"" bay"	53641	51087
+136190	Water Cooler Thermaltake Floe Riing 240TT, for Socket 115x/1366/2011/2066/AMD	60636	57749
+136191	Water Cooler Thermaltake Floe Riing 280TT, for Socket 115x/1366/2011/2066/AMD	67009	63818
+125597	Water Cooler, Corsair H110i (CW-9060026-WW), for 115x/1366/2011/AMD, 2100rpm, 113CFM, 43dBA	62749	59761
+126130	Water Cooler, Corsair H115i (CW-9060027-WW), for 115x/2011/AMD/TR4, 2000rpm, 104.65CFM, 45dBA	68058	64817
+125600	Water Cooler, Corsair H45 (CW-9060028-WW), for 115x/1366/2011/AMD, 2300rpm, 94CFM, 31dBA	27166	25872
+125602	Water Cooler, Corsair H5 SF (CW-9060023-WW), for 115x/1366/2011/AMD, 1000-1800rpm,  for MINI-ITX	39753	37860
+108320	Water Cooler, Corsair H55 [CW-9060010-WW], for 115x/1366/2011/AMD, 12cm fan	30873	29403
+108319	Water Cooler, Corsair H75 [CW9060015-WW], for 115x/1366/2011/AMD, 2*12cm PWM fan	40357	38435
+125599	Water Cooler, Corsair H80i V2 (CW-9060024-WW), for 115x/2011/AMD/TR4, 2435rpm, 70.69CFM, 37.7dBA	47819	45542
+111856	Water Cooler, Corsair H90 (CW-9060013-WW), for 115x/1366/2011/AMD, 1500rpm, 94CFM, 35dBA	45997	43807
+132005	Water Cooler, Fractal Kelvin S36 (FD-WCU-KELVIN-S36-BK), for 115x/1366/2011/AMD, 2000rpm	68009	64770
+132014	Water Cooler, Fractal Kelvin T12 (FD-WCU-KELVIN-T12-BK), for 115x/1366/2011/AMD	44915	42776
+136192	Water Cooler, NZXT Kraken X42, for 115x/1366/2011/AMD, 1600-2800rpm, 21-38dBA	54538	51941
