@@ -1,5 +1,4 @@
 #include "Header.h"
-using namespace std;
 
 int MenuMain(char * login, int *AllBusketCount, AllBasket * allbasket)
 {
@@ -62,6 +61,7 @@ int MenuMain(char * login, int *AllBusketCount, AllBasket * allbasket)
 			if (goods == NULL)
 			{
 				perror("Error");
+				free(arrGoods);
 				system("pause");
 				exit(1);
 			}
@@ -80,6 +80,7 @@ int MenuMain(char * login, int *AllBusketCount, AllBasket * allbasket)
 			{
 				perror("Error");
 				system("pause");
+				free(arrGoods);
 				free(goods);
 				exit(1);
 			}
@@ -100,6 +101,9 @@ int MenuMain(char * login, int *AllBusketCount, AllBasket * allbasket)
 			if (basket == NULL)
 			{
 				printf("Ошибка при вызове функции calloc для basket\n");
+				free(arrGoods);
+				free(goods);
+				free(globalIndex);
 				system("pause");
 				exit(1);
 			}
@@ -108,23 +112,68 @@ int MenuMain(char * login, int *AllBusketCount, AllBasket * allbasket)
 			free(arrGoods);
 			if (countOfGoodsInBasket == 0)
 			{
-				printf("Товар не был добавлен\nДля выхода введите 0\nДля возврата в меню выбора товара введите 1\n----> ");
-				scanf_s("%d", &z);
-				switch (z)
+				if (*AllBusketCount == 0)
 				{
-				case 1:
+					printf("Товар не был добавлен\nДля выхода введите 0\nДля возврата в меню выбора товара введите 1\n----> ");
+					scanf_s("%d", &z);
+					switch (z)
+					{
+						case 1:
+						{
+							system("cls");
+							free(goods);
+							free(globalIndex);
+							cin.ignore();
+							return 1;
+						} break;
+						case 0:
+						{
+							system("cls");
+							printf("До скоро встречи\n");
+							free(basket);
+							free(goods);
+							free(globalIndex);
+							return 0;
+						} break;
+					}
+				}
+				else
 				{
-					system("cls");
-					return 1;
-				} break;
-				case 0:
-				{
-					system("cls");
-					printf("До скоро встречи\n");
-					free(basket);
-					return 0;
-					//free(goods);
-				} break;
+					printf("В вашей корзине %d наименований товара\nДля оформления товара введите 1\nДля возврата в меню выбора товара введите 2\nИли введите 0 для выхода\n---> ",
+						*AllBusketCount);
+					scanf_s("%d", &z);
+					switch (z)
+					{
+					case 1:
+					{
+						system("cls");
+						free(basket);
+						free(goods);
+						free(globalIndex);
+						int ReTurn = OrderForm(allbasket, AllBusketCount, &sum);
+						if (ReTurn == 1)
+							return 0;
+						else
+							return 0;
+					} break;
+					case 2:
+					{
+						cin.ignore();
+						free(basket);
+						free(goods);
+						free(globalIndex);
+						MenuMain(login, AllBusketCount, allbasket);
+					} break;
+					case 0:
+					{
+						system("cls");
+						printf("До скоро встречи\n");
+						free(basket);
+						free(goods);
+						free(globalIndex);
+						return 0;
+					} break;
+					}
 				}
 			}
 			long sumLocal = 0;
@@ -147,16 +196,23 @@ int MenuMain(char * login, int *AllBusketCount, AllBasket * allbasket)
 						printf("Ошибка при создании allbasket\n");
 						free(basket);
 						free(goods);
+						free(globalIndex);
 						system("pause");
 						exit(1);
 					}
-					
+					cin.ignore();
+					free(basket);
+					free(goods);
+					free(globalIndex);
 					MenuMain(login, AllBusketCount, allbasket);
 				} break;
 				case 2:
 				{
 					// написать функцию для оформления заказа
 					//OrderForm(basket, &countOfGoodsInBasket, &sum);
+					free(basket);
+					free(goods);
+					free(globalIndex);
 					int ReTurn = OrderForm(allbasket, AllBusketCount, &sum);
 					if (ReTurn == 1)
 						return 0;
@@ -167,12 +223,13 @@ int MenuMain(char * login, int *AllBusketCount, AllBasket * allbasket)
 				{
 					system("cls");
 					free(basket);
-					//free(goods);
+					free(goods);
+					free(globalIndex);
 					return 0;
 				} break;
 			}
-			free(basket);
-			free(goods);
+			/*free(basket);
+			free(goods);*/
 		}
 		break;
 		case Cooler:
@@ -202,6 +259,7 @@ int MenuMain(char * login, int *AllBusketCount, AllBasket * allbasket)
 			if (goods == NULL)
 			{
 				perror("Error");
+				free(arrGoods);
 				system("pause");
 				exit(1);
 			}
@@ -220,6 +278,7 @@ int MenuMain(char * login, int *AllBusketCount, AllBasket * allbasket)
 			{
 				perror("Error");
 				system("pause");
+				free(arrGoods);
 				free(goods);
 				exit(1);
 			}
@@ -240,6 +299,9 @@ int MenuMain(char * login, int *AllBusketCount, AllBasket * allbasket)
 			if (basket == NULL)
 			{
 				printf("Ошибка при вызове функции calloc для basket\n");
+				free(arrGoods);
+				free(goods);
+				free(globalIndex);
 				system("pause");
 				exit(1);
 			}
@@ -248,23 +310,68 @@ int MenuMain(char * login, int *AllBusketCount, AllBasket * allbasket)
 			free(arrGoods);
 			if (countOfGoodsInBasket == 0)
 			{
-				printf("Товар не был добавлен\nДля выхода введите 0\nДля возврата в меню выбора товара введите 1\n----> ");
-				scanf_s("%d", &z);
-				switch (z)
+				if (*AllBusketCount == 0)
 				{
-				case 1:
+					printf("Товар не был добавлен\nДля выхода введите 0\nДля возврата в меню выбора товара введите 1\n----> ");
+					scanf_s("%d", &z);
+					switch (z)
+					{
+					case 1:
+					{
+						system("cls");
+						free(goods);
+						free(globalIndex);
+						cin.ignore();
+						return 1;
+					} break;
+					case 0:
+					{
+						system("cls");
+						printf("До скоро встречи\n");
+						free(basket);
+						free(goods);
+						free(globalIndex);
+						return 0;
+					} break;
+					}
+				}
+				else
 				{
-					system("cls");
-					return 1;
-				} break;
-				case 0:
-				{
-					system("cls");
-					printf("До скоро встречи\n");
-					free(basket);
-					return 0;
-					//free(goods);
-				} break;
+					printf("В вашей корзине %d наименований товара\nДля оформления товара введите 1\nДля возврата в меню выбора товара введите 2\nИли введите 0 для выхода\n---> ",
+						*AllBusketCount);
+					scanf_s("%d", &z);
+					switch (z)
+					{
+					case 1:
+					{
+						system("cls");
+						free(basket);
+						free(goods);
+						free(globalIndex);
+						int ReTurn = OrderForm(allbasket, AllBusketCount, &sum);
+						if (ReTurn == 1)
+							return 0;
+						else
+							return 0;
+					} break;
+					case 2:
+					{
+						cin.ignore();
+						free(basket);
+						free(goods);
+						free(globalIndex);
+						MenuMain(login, AllBusketCount, allbasket);
+					} break;
+					case 0:
+					{
+						system("cls");
+						printf("До скоро встречи\n");
+						free(basket);
+						free(goods);
+						free(globalIndex);
+						return 0;
+					} break;
+					}
 				}
 			}
 			long sumLocal = 0;
@@ -287,16 +394,23 @@ int MenuMain(char * login, int *AllBusketCount, AllBasket * allbasket)
 					printf("Ошибка при создании allbasket\n");
 					free(basket);
 					free(goods);
+					free(globalIndex);
 					system("pause");
 					exit(1);
 				}
-
+				cin.ignore();
+				free(basket);
+				free(goods);
+				free(globalIndex);
 				MenuMain(login, AllBusketCount, allbasket);
 			} break;
 			case 2:
 			{
 				// написать функцию для оформления заказа
 				//OrderForm(basket, &countOfGoodsInBasket, &sum);
+				free(basket);
+				free(goods);
+				free(globalIndex);
 				int ReTurn = OrderForm(allbasket, AllBusketCount, &sum);
 				if (ReTurn == 1)
 					return 0;
@@ -307,14 +421,208 @@ int MenuMain(char * login, int *AllBusketCount, AllBasket * allbasket)
 			{
 				system("cls");
 				free(basket);
-				//free(goods);
+				free(goods);
+				free(globalIndex);
 				return 0;
 			} break;
 			}
-			free(basket);
-			free(goods);
+		//	free(goods);
 		}break;
 		case Cpu:
+		{
+			countOfStrings = 0;
+			countOfChar = 0;
+			err = fopen_s(&file, "cpu.txt", "r");
+			if (err != 0)
+			{
+				perror("Error");
+				system("pause");
+				exit(1);
+			}
+			CountOfString(file, &countOfStrings);
+			CountOfChar(file, &countOfChar);
+			arrGoods = (char*)calloc(countOfChar, sizeof(char));
+			if (arrGoods == NULL)
+			{
+				perror("Error");
+				system("pause");
+				exit(1);
+			}
+			FromFileToArr(arrGoods, file, &countOfChar);
+			fclose(file);
+
+			goods = (Goods*)calloc(countOfStrings, sizeof(Goods));
+			if (goods == NULL)
+			{
+				perror("Error");
+				free(arrGoods);
+				system("pause");
+				exit(1);
+			}
+			countOfStrings -= 2;
+
+			CodesToStruct(arrGoods, goods, &countOfChar);
+			NameToStruct(arrGoods, goods, &countOfChar);
+			RetailtPriceToStruct(arrGoods, goods, &countOfChar);
+			WholeSalePriceToStruct(arrGoods, goods, &countOfChar); // всё работает
+			int code = 0;
+			int countOfGoodsInBasket = 0;
+			int localIndex = 0;
+			int *globalIndex;
+			globalIndex = (int*)calloc(1, sizeof(int));
+			if (globalIndex == NULL)
+			{
+				perror("Error");
+				system("pause");
+				free(arrGoods);
+				free(goods);
+				exit(1);
+			}
+
+			int TriesCount = 0;
+			int z = 0;
+			StructPrint(goods, &countOfStrings);
+			while (GoodsChoosing(goods, &code, &countOfStrings, &localIndex, &TriesCount) != 0)
+			{
+				countOfGoodsInBasket++;
+				globalIndex = (int*)realloc(globalIndex, (countOfGoodsInBasket + 1) * sizeof(int));
+				globalIndex[z] = localIndex;
+				z++;
+			}
+			// после того как функция выше равна нулю мы идем к баскету
+			Basket *basket;
+			basket = (Basket*)calloc(countOfGoodsInBasket, sizeof(Basket));
+			if (basket == NULL)
+			{
+				printf("Ошибка при вызове функции calloc для basket\n");
+				free(arrGoods);
+				free(goods);
+				free(globalIndex);
+				system("pause");
+				exit(1);
+			}
+			FromArrToBasket(basket, globalIndex, goods, &countOfGoodsInBasket, &countOfStrings);
+
+			free(arrGoods);
+			if (countOfGoodsInBasket == 0)
+			{
+				if (*AllBusketCount == 0)
+				{
+					printf("Товар не был добавлен\nДля выхода введите 0\nДля возврата в меню выбора товара введите 1\n----> ");
+					scanf_s("%d", &z);
+					switch (z)
+					{
+					case 1:
+					{
+						system("cls");
+						free(goods);
+						free(globalIndex);
+						cin.ignore();
+						return 1;
+					} break;
+					case 0:
+					{
+						system("cls");
+						printf("До скоро встречи\n");
+						free(basket);
+						free(goods);
+						free(globalIndex);
+						return 0;
+					} break;
+					}
+				}
+				else
+				{
+					printf("В вашей корзине %d наименований товара\nДля оформления товара введите 1\nДля возврата в меню выбора товара введите 2\nИли введите 0 для выхода\n---> ",
+						*AllBusketCount);
+					scanf_s("%d", &z);
+					switch (z)
+					{
+					case 1:
+					{
+						system("cls");
+						free(basket);
+						free(goods);
+						free(globalIndex);
+						int ReTurn = OrderForm(allbasket, AllBusketCount, &sum);
+						if (ReTurn == 1)
+							return 0;
+						else
+							return 0;
+					} break;
+					case 2:
+					{
+						cin.ignore();
+						free(basket);
+						free(goods);
+						free(globalIndex);
+						MenuMain(login, AllBusketCount, allbasket);
+					} break;
+					case 0:
+					{
+						system("cls");
+						printf("До скоро встречи\n");
+						free(basket);
+						free(goods);
+						free(globalIndex);
+						return 0;
+					} break;
+					}
+				}
+			}
+			long sumLocal = 0;
+
+			allbasket = (AllBasket*)realloc(allbasket, (countOfGoodsInBasket + 1) * sizeof(AllBasket));
+			FromOneBusketToAnother(allbasket, basket, &countOfGoodsInBasket, AllBusketCount);
+
+			printf("Хотите ещё добавить товар в корзину? (1 - для подтверждения)\n");
+			printf("Хотите оформить заказ? (2 - для подтверждения)\n");
+			printf("Хотите отменить заказ и выйти? (3 - для подтверждения)\n ---->");
+			int decision;
+			scanf_s("%d", &decision);
+			switch (decision)
+			{
+			case 1:
+			{
+
+				if (allbasket == NULL)
+				{
+					printf("Ошибка при создании allbasket\n");
+					free(basket);
+					free(goods);
+					free(globalIndex);
+					system("pause");
+					exit(1);
+				}
+				cin.ignore();
+				free(basket);
+				free(goods);
+				free(globalIndex);
+				MenuMain(login, AllBusketCount, allbasket);
+			} break;
+			case 2:
+			{
+				// написать функцию для оформления заказа
+				//OrderForm(basket, &countOfGoodsInBasket, &sum);
+				free(basket);
+				free(goods);
+				free(globalIndex);
+				int ReTurn = OrderForm(allbasket, AllBusketCount, &sum);
+				if (ReTurn == 1)
+					return 0;
+				else
+					return 0;
+			} break;
+			case 3:
+			{
+				system("cls");
+				free(basket);
+				free(goods);
+				free(globalIndex);
+				return 0;
+			} break;
+			}
+		}
 			break;
 		case AllinOnePC:
 			break;
@@ -828,3 +1136,66 @@ void FromArrToBasket(Basket * basket, int *globalIndex, Goods * goods, int * cou
 	
 }
 
+void copy_board(int board1[HEIGHT + 2][WIDTH + 2], int board2[HEIGHT + 2][WIDTH + 2])
+{
+	for (int i = 0; i < HEIGHT + 2; i++)
+	{
+		for (int j = 0; j < WIDTH + 2; j++)
+		{
+			board2[i][j] = board1[i][j];
+		}
+	}
+}
+
+void new_generation(int board[HEIGHT + 2][WIDTH + 2])
+{
+	int temp_board[HEIGHT + 2][WIDTH + 2];
+	int neighbours;
+
+	for (int i = 0; i < HEIGHT + 2; i++)
+	{
+		for (int j = 0; j < WIDTH + 2; j++)
+		{
+			if (i == 0 || j == 0 || i == HEIGHT + 2 || j == WIDTH + 2)
+				temp_board[i][j] = 0;
+			else
+			{
+				neighbours = board[i - 1][j - 1] + board[i - 1][j] + board[i - 1][j + 1] + board[i][j - 1] + board[i][j + 1] + board[i + 1][j - 1] + board[i + 1][j] + board[i + 1][j + 1];
+				if (board[i][j] == 1)
+				{
+					if (neighbours < 2 || neighbours > 3)
+						temp_board[i][j] = 0; 
+					else
+						temp_board[i][j] = 1;
+				}
+
+				else
+				{
+					if (neighbours == 3)
+						temp_board[i][j] = 1; 
+					else
+						temp_board[i][j] = 0;
+				}
+			}
+		}
+	}
+
+	copy_board(temp_board, board);
+
+
+}
+
+void display_board(int board[HEIGHT + 2][WIDTH + 2])
+{
+	for (int i = 1; i < HEIGHT + 1; i++)
+	{
+		for (int j = 1; j < WIDTH + 1; j++)
+		{
+			if (board[i][j] == 1)
+				cout << "*";
+			else
+				cout << " ";
+		}
+		cout << endl;
+	}
+}
